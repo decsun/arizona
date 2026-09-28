@@ -226,6 +226,28 @@ footer{margin-top:28px;font-size:12px;color:var(--ink-3)}
   .tip{grid-template-columns:64px 1fr;gap:10px}
   .dnum{font-size:38px}
 }
+/* ---------- finale ---------- */
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9}
+.finale{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px 20px 20px;box-shadow:var(--shadow);display:grid;gap:18px;position:relative;overflow:hidden;scroll-margin-top:60px}
+.finale::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,#5b4466,#cf6a45,#f1b36d,#3b6a55,#2b4a6f)}
+.fin-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--sun)}
+.fin-title{font-family:var(--display);font-weight:800;font-size:clamp(52px,15vw,84px);line-height:1;margin:6px 0 4px;letter-spacing:-.02em;background:linear-gradient(100deg,#5b4466 0%,#cf5f38 45%,#e9a04f 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fin-sub{font-size:15px;color:var(--ink-2);max-width:34em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--surface-2);border-radius:16px;padding:12px 14px;display:grid;gap:2px;align-content:start}
+.stat .num{font-family:var(--display);font-weight:800;font-size:32px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .num small{font-size:14px;font-weight:600;margin-left:2px;color:var(--ink-2);letter-spacing:0}
+.stat .lab{font-size:12px;color:var(--ink-3);line-height:1.4}
+.fin-route{display:flex;flex-wrap:wrap;gap:6px}
+.fin-route span{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--sun-soft);color:var(--ink)}
+.fin-h{font-family:var(--display);font-weight:700;font-size:17px;margin:0}
+.recap{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.recap li{display:grid;grid-template-columns:78px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.recap li:last-child{border-bottom:0}
+.recap .rd{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:2px}
+.fin-end{font-family:var(--display);font-weight:700;font-size:20px;color:var(--sun)}
+@media (max-width:460px){.stats{grid-template-columns:repeat(2,1fr)}.stat .num{font-size:28px}.recap li{grid-template-columns:64px 1fr}}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ev.now .ev-dot::before{animation:none;display:none}.track i{transition:none}}
 </style>
 
@@ -265,6 +287,40 @@ footer{margin-top:28px;font-size:12px;color:var(--ink-3)}
       <div class="track"><i id="progBar"></i></div>
     </div>
   </header>
+
+  <section class="finale" id="finale" hidden>
+    <div>
+      <div class="fin-kicker">10/10 周六 06:15 · 已平安抵达香港</div>
+      <div class="fin-title">完结撒花</div>
+      <p class="fin-sub" style="margin:0">12 天的亚利桑那环线结束了：从鲍威尔湖、羚羊峡谷到 Sedona 红岩，再到 Tucson 的仙人掌，最后在 Tempe 开完 ICNP。辛苦了，欢迎回家。</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="num">12<small>天</small></span><span class="lab">9/29 – 10/10</span></div>
+      <div class="stat"><span class="num">4<small>段航班</small></span><span class="lab">空中约 31 小时 41 分</span></div>
+      <div class="stat"><span class="num">≈24,500<small>km</small></span><span class="lab">飞行里程，约绕地球 0.6 圈</span></div>
+      <div class="stat"><span class="num">≈1,220<small>km</small></span><span class="lab">自驾 6 天，约 760 英里</span></div>
+      <div class="stat"><span class="num">9<small>晚</small></span><span class="lab">5 家酒店</span></div>
+      <div class="stat"><span class="num">3<small>天</small></span><span class="lab">IEEE ICNP 2026 正会</span></div>
+    </div>
+    <div>
+      <h3 class="fin-h" style="margin-bottom:8px">走过的地方</h3>
+      <div class="fin-route"><span>凤凰城</span><span>Flagstaff</span><span>Page</span><span>马蹄湾</span><span>上羚羊峡谷</span><span>Oak Creek Canyon</span><span>Sedona</span><span>Tucson</span><span>Saguaro 国家公园</span><span>Tempe · ASU</span><span>旧金山转机</span></div>
+    </div>
+    <div>
+      <h3 class="fin-h">行程回顾</h3>
+      <ol class="recap">
+        <li><span class="rd">9/29</span><span>香港出发，经洛杉矶飞到凤凰城，深夜取车</span></li>
+        <li><span class="rd">9/30</span><span>北上 Page，马蹄湾看日落</span></li>
+        <li><span class="rd">10/1</span><span>中午逛上羚羊峡谷，下午穿过 Oak Creek Canyon 到 Sedona</span></li>
+        <li><span class="rd">10/2</span><span>Sedona 红岩一整天</span></li>
+        <li><span class="rd">10/3</span><span>南下 Tucson，看巨人柱仙人掌</span></li>
+        <li><span class="rd">10/4–5</span><span>回到 Tempe，还车，会场踩点</span></li>
+        <li><span class="rd">10/6–8</span><span>ICNP 2026 三天正会，10/7 晚宴在 Caffe Boa</span></li>
+        <li><span class="rd">10/8–10</span><span>夜飞旧金山，午夜转机，清晨回到香港</span></li>
+      </ol>
+    </div>
+    <div class="fin-end">下次旅行见。</div>
+  </section>
 
   <div class="clocks">
     <div class="clock"><span class="z">香港</span><span class="t" id="cHK">--:--</span><span class="d" id="dHK"></span></div>
@@ -611,9 +667,11 @@ function dur(ms){
   return `${mm} 分钟`;
 }
 let target = null;
+/* open the page with #finale-preview to see the end-of-trip screen early */
+const PREVIEW = location.hash === '#finale-preview';
 
 function update(){
-  const now = new Date(), t = now.getTime();
+  const now = PREVIEW ? new Date('2026-10-10T01:00:00Z') : new Date(), t = now.getTime();
   [['HK', 'Asia/Hong_Kong'], ['AZ', 'America/Phoenix'], ['CA', 'America/Los_Angeles']].forEach(([id, tz]) => {
     $('#c' + id).textContent = hm(tz, now);
     $('#d' + id).textContent = fmt(tz, { month: 'numeric', day: 'numeric', weekday: 'short' }).format(now);
@@ -653,7 +711,8 @@ function update(){
     sub = `下一项 ${nxt.time} ${nxt.zl} · ${nxt.label}`;
     target = nxt;
   } else if (cur === last){
-    label = '旅程结束'; title = '已抵达香港，欢迎回家'; sub = '10/10 周六 06:15 抵达'; target = curEv;
+    label = '旅程结束'; title = '完结撒花 · 欢迎回家'; sub = '10/10 周六 06:15 抵达香港 · 点「回顾」看行程总结'; target = null;
+    startFinale();
   } else if (active){
     label = `进行中 · 当地 ${hm(curEv.tzName, now)}`; title = curEv.label;
     sub = nxt ? `下一项 ${nxt.time} ${nxt.label} · ${dur(nxt.start - t)}后` : '';
@@ -668,7 +727,67 @@ function update(){
   $('#nbLabel').textContent = label; $('#nbTitle').textContent = title; $('#nbSub').textContent = sub;
 }
 
+/* ---------- finale: summary + endless confetti & streamers ---------- */
+let finaleOn = false;
+function startFinale(){
+  if (finaleOn) return;
+  finaleOn = true;
+  $('#finale').hidden = false;
+  $('#nbGo').textContent = '回顾 ↑';
+  const j = $('#jumpNow'); j.textContent = '旅程总结';
+  const cv = document.createElement('canvas'); cv.id = 'confetti'; cv.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(cv);
+  const ctx = cv.getContext('2d');
+  const COLORS = ['#cf5f38', '#f1b36d', '#ffd9a8', '#5b4466', '#3b6a55', '#2b4a6f', '#e8805f', '#7fbf9f'];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W = 0, H = 0, dpr = 1;
+  const size = () => { dpr = Math.min(window.devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+  size(); addEventListener('resize', size);
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const make = (initial) => {
+    const ribbon = Math.random() < 0.28;
+    return {
+      ribbon, x: rnd(0, W), y: initial ? rnd(-H, H) : rnd(-120, -20),
+      vy: ribbon ? rnd(0.6, 1.2) : rnd(0.9, 2.1), vx: rnd(-0.3, 0.3),
+      sway: rnd(0.6, 1.8), phase: rnd(0, Math.PI * 2), spin: rnd(-0.08, 0.08), rot: rnd(0, Math.PI * 2),
+      w: ribbon ? rnd(3.5, 5) : rnd(6, 10), h: ribbon ? rnd(50, 90) : rnd(9, 15),
+      color: COLORS[(Math.random() * COLORS.length) | 0]
+    };
+  };
+  const count = W < 500 ? 70 : 110;
+  const P = Array.from({ length: count }, () => make(true));
+  const draw = (p, tt) => {
+    ctx.fillStyle = p.color; ctx.strokeStyle = p.color;
+    if (p.ribbon){
+      ctx.lineWidth = p.w; ctx.lineCap = 'round'; ctx.beginPath();
+      for (let k = 0; k <= 10; k++){
+        const yy = p.y - k * p.h / 10;
+        const xx = p.x + Math.sin(tt * 0.004 + p.phase + k * 0.7) * 7;
+        k ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy);
+      }
+      ctx.globalAlpha = .85; ctx.stroke(); ctx.globalAlpha = 1;
+    } else {
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      ctx.scale(1, Math.cos(tt * 0.006 + p.phase));
+      ctx.globalAlpha = .9; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore();
+    }
+  };
+  if (reduce){ ctx.clearRect(0, 0, W, H); P.forEach(p => draw(p, 0)); return; }
+  const loop = (tt) => {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < P.length; i++){
+      const p = P[i];
+      p.y += p.vy; p.x += p.vx + Math.sin(tt * 0.0015 * p.sway + p.phase) * 0.6; p.rot += p.spin;
+      if (p.y - (p.ribbon ? p.h : 0) > H + 20 || p.x < -60 || p.x > W + 60) P[i] = make(false);
+      draw(P[i], tt);
+    }
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+}
+
 function goToTarget(smooth){
+  if (finaleOn){ $('#finale').scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' }); return; }
   if (!target) return;
   const el = document.getElementById('ev-' + target.idx);
   el.scrollIntoView({ block: 'center', behavior: smooth ? 'smooth' : 'auto' });
